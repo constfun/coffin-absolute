@@ -1,8 +1,6 @@
+from jinja2 import contextfunction
 from coffin.template import Library
 from coffin.template.defaulttags import URLExtension
-from jinja2.ext import Extension
-from jinja2 import nodes
-import jinja2
 
 
 register = Library()
@@ -18,7 +16,7 @@ def absolute_url(view_name, request, *args, **kwargs):
 class AbsoluteUrlExtension(URLExtension):
     tags = set(['absolute_url'])
 
-    @jinja2.contextfunction
+    @contextfunction
     def _reverse(self, context, *args, **kwargs):
         relative_url = URLExtension._reverse(*args, **kwargs)
         return context['request'].build_absolute_uri(relative_url)
