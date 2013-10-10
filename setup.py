@@ -10,7 +10,6 @@ setup(
         author='Nikolay Zalutskiy',
         author_email='pacemkr@{nospam}gmail.com',
         url='https://github.com/pacemkr/coffin-absolute',
-        install_requires=['coffin'],
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         classifiers=[
